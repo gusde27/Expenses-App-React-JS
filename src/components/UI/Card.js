@@ -1,7 +1,7 @@
 import React from 'react';
 import './Card.css';
 
-function Card(cardItem){
+const Card = (cardItem) => {
     //for add all className of CSS File from outside
     const classes = 'card ' + cardItem.className;
 

@@ -2,7 +2,7 @@ import React from 'react';
 import ExpensesItem from "./ExpensesItem";
 import './ExpensesItemList.css';
 
-function ExpensesItemList(props) {
+const ExpensesItemList = (props) => {
   const expenses = props.expenses;
 
   console.log(expenses);
