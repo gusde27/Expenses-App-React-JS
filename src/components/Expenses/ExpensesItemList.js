@@ -1,13 +1,15 @@
+import React from 'react';
 import ExpensesItem from "./ExpensesItem";
+import './ExpensesItemList.css';
 
-function ExpensesItemList(props) {
+const ExpensesItemList = (props) => {
   const expenses = props.expenses;
 
   console.log(expenses);
 
   return (
-    <div>
-        <ExpensesItem
+    <div className="expensesItemList">
+      <ExpensesItem
         date={expenses[0].date}
         title={expenses[0].title}
         amount={expenses[0].amount}
