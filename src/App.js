@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import ExpensesItemList from './components/Expenses/ExpensesItemList';
-import FormExpenses from './components/FormExpenses/FormExpenses';
+import NewExpenses from './components/FormExpenses/NewExpenses';
 
 const App = () => {
 
@@ -35,7 +35,7 @@ const App = () => {
   return (
 
     <div>
-      <FormExpenses></FormExpenses>
+      <NewExpenses/>
       <ExpensesItemList expenses={ expenses }></ExpensesItemList>
     </div>
 

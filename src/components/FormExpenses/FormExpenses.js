@@ -1,31 +1,28 @@
 import React from "react";
-import Card from '../UI/Card';
+import "./FormExpenses.css";
 
 const FormExpenses = () => {
 
     return (
-        <Card className= "expenseItem">
-        <div>
-
-            <form>
-                <div>
-                    <label>Name</label>
-                    <input name="name" type="text"/>
+        <form>
+            <div className="new-expense__controls">
+                <div className="new-expense__control">
+                    <label>Title</label>
+                    <input name="expense_title" type="text" />
                 </div>
-                <div>
-                    <label>Salary</label>
-                    <input name="salary" type="number"/>
+                <div className="new-expense__control">
+                    <label>Amount</label>
+                    <input name="expense_amount" type="number" min="0" />
                 </div>
-                <div>
+                <div className="new-expense__control">
                     <label>Date</label>
-                    <input name="date" type="date"/>
+                    <input name="expense_date" type="date" min="2019-01-01" max={ Date().now } />
                 </div>
-            </form>
-            
-        </div>
-
-        </Card>
-        
+            </div>
+            <div className="new-expense__actions">
+                <button type="submit"> Add Expenses </button>
+            </div>
+        </form>
     );
 
 }
