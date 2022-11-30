@@ -23,9 +23,10 @@ const FormExpenses = () => {
         //     enteredTitle = event.target.value;
         // });
         //many state
-        setEnteredTitle((prevState) => {
-            return { ...prevState, enteredTitle = event.target.value };
-        });
+        // setEnteredTitle((prevState) => {
+        //     return { ...prevState, enteredTitle = event.target.value };
+        // });
+        setEnteredTitle(event.target.value);
     }
 
     const amountHandleChange = (event) => {
@@ -36,9 +37,10 @@ const FormExpenses = () => {
         //     enteredAmount = event.target.value;
         // });
         //many state
-        setEnteredAmount((prevState) => {
-            return { ...prevState, enteredAmount = event.target.value };
-        });
+        // setEnteredAmount((prevState) => {
+        //     return { ...prevState, enteredAmount = event.target.value };
+        // });
+        setEnteredAmount(event.target.value);
     }
 
     const dateHandleChange = (event) => {
@@ -48,29 +50,43 @@ const FormExpenses = () => {
         //     enteredDate = event.target.value;
         // });
         //many state
-        setEnteredDate((prevState) => {
-            return { ...prevState, enteredDate = event.target.value };
-        });
+        setEnteredDate(event.target.value);
     }
 
+    //for handling the submit
+    const submitHandler = (event) => {
+        event.preventDefault();
+
+        const expenseData = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: new Date(enteredDate)
+        };
+
+        console.log(expenseData);
+        setEnteredTitle('');
+        setEnteredAmount('');
+        setEnteredDate('');
+    };
+
     return (
-        <form>
+        <form onSubmit={} >
             <div className="new-expense__controls">
                 <div className="new-expense__control">
                     <label>Title</label>
-                    <input name="expense_title" type="text" onChange={ titleHandleChange} />
+                    <input value={enteredTitle} type="text" onChange={ titleHandleChange} />
                 </div>
                 <div className="new-expense__control">
                     <label>Amount</label>
-                    <input name="expense_amount" type="number" min="0" />
+                    <input value={ enteredAmount } type="number" min="0" onChange={ amountHandleChange } />
                 </div>
                 <div className="new-expense__control">
                     <label>Date</label>
-                    <input name="expense_date" type="date" min="2019-01-01" max={ Date().now } />
+                    <input value={enteredDate} type="date" min="2019-01-01" max={ Date().now } onChange={ dateHandleChange } />
                 </div>
             </div>
             <div className="new-expense__actions">
-                <button type="submit"> Add Expenses </button>
+                <button type="submit" onClick={ submitHandler }> Add Expenses </button>
             </div>
         </form>
     );
