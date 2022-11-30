@@ -3,33 +3,53 @@ import "./FormExpenses.css";
 
 const FormExpenses = () => {
     useState();
+    // one input one state
+    const [enteredTitle, setEnteredTitle] = useState('');
+    const [enteredAmount, setEnteredAmount] = useState('');
+    const [enteredDate, setEnteredDate] = useState('');
 
-    const [userInput, setUserInput] = useState({
-        enteredTitle = '',
-        enteredAmount = '',
-        enteredDate = ''
-    });
+    //call in one state
+    // const [userInput, setUserInput] = useState({
+    //     enteredTitle = '',
+    //     enteredAmount = '',
+    //     enteredDate = ''
+    // });
 
     const titleHandleChange = (event) => {
         //console.log(event.target.value);
-        userInput({
-            ...userInput,
-            enteredTitle = event.target.value;
+        //how to call in one state
+        // userInput({
+        //     ...userInput,
+        //     enteredTitle = event.target.value;
+        // });
+        //many state
+        setEnteredTitle((prevState) => {
+            return { ...prevState, enteredTitle = event.target.value };
         });
     }
 
     const amountHandleChange = (event) => {
         //console.log(event.target.value);
-        userInput({
-            ...userInput,
-            enteredAmount = event.target.value;
+        //how to call in one state
+        // userInput({
+        //     ...userInput,
+        //     enteredAmount = event.target.value;
+        // });
+        //many state
+        setEnteredAmount((prevState) => {
+            return { ...prevState, enteredAmount = event.target.value };
         });
     }
 
     const dateHandleChange = (event) => {
-        userInput({
-            ...userInput,
-            enteredDate = event.target.value;
+        //how to call in one state
+        // userInput({
+        //     ...userInput,
+        //     enteredDate = event.target.value;
+        // });
+        //many state
+        setEnteredDate((prevState) => {
+            return { ...prevState, enteredDate = event.target.value };
         });
     }
 
