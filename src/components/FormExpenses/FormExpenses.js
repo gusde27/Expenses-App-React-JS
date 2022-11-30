@@ -4,8 +4,33 @@ import "./FormExpenses.css";
 const FormExpenses = () => {
     useState();
 
+    const [userInput, setUserInput] = useState({
+        enteredTitle = '',
+        enteredAmount = '',
+        enteredDate = ''
+    });
+
     const titleHandleChange = (event) => {
-        console.log(event.target.value);
+        //console.log(event.target.value);
+        userInput({
+            ...userInput,
+            enteredTitle = event.target.value;
+        });
+    }
+
+    const amountHandleChange = (event) => {
+        //console.log(event.target.value);
+        userInput({
+            ...userInput,
+            enteredAmount = event.target.value;
+        });
+    }
+
+    const dateHandleChange = (event) => {
+        userInput({
+            ...userInput,
+            enteredDate = event.target.value;
+        });
     }
 
     return (
