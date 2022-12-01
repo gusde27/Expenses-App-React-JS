@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./FormExpenses.css";
 
-const FormExpenses = () => {
+const FormExpenses = (propsNewExpense) => {
     useState();
     // one input one state
     const [enteredTitle, setEnteredTitle] = useState('');
@@ -64,6 +64,7 @@ const FormExpenses = () => {
         };
 
         console.log(expenseData);
+        propsNewExpense.onSaveExpenseData(expenseData); // add new expanse to model expanse
         setEnteredTitle('');
         setEnteredAmount('');
         setEnteredDate('');
