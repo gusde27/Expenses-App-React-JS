@@ -13,17 +13,16 @@ const ExpensesItem = (props) => {
   }
 
   return (
-    <Card className= "expenseItem">
-      <ExpensesDate date={ props.date }/>
-      <div className= "expenseItemDescription">
-        <h2>{ title }</h2>
-      </div>
-      <div className= "expenseItemPrice">
-        Rp.{ props.amount }
-      </div>
-      <button onClick={updateTitle}> change title name </button>
-    </Card>
-
+      <Card className= "expenseItem">
+        <ExpensesDate date={ props.date }/>
+        <div className= "expenseItemDescription">
+          <h2>{ title }</h2>
+        </div>
+        <div className= "expenseItemPrice">
+          Rp.{ props.amount }
+        </div>
+        <button onClick={updateTitle}> change title name </button>
+      </Card>
   );
 }
 
