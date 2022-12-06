@@ -4,6 +4,10 @@ import './ExpensesFilter.css';
 
 const ExpensesFilter = (props) => {
 
+  const filterPickDate = () => {
+    //do this function
+  };
+
   return (
     <div className='expenses-filter'>
       <div className='expenses-filter__control'>
